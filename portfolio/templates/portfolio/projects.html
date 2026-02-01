@@ -1,0 +1,27 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block title %}Projects - Portfolio{% endblock %}
+
+{% block content %}
+<section class="work section" id="work">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="work__container bd-grid">
+        
+        {% for project in projects %}
+        <a href="{{ project.url }}" class="work__img" target="_blank" rel="noreferrer">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            <div class="work__overlay">
+                <h3 class="work__title">{{ project.title }}</h3>
+                <p class="work__description">{{ project.description }}</p>
+            </div>
+        </a>    
+        {% endfor %}
+
+    </div>
+</section>
+
+
+{% endblock %}

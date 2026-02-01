@@ -1,0 +1,101 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block title %}About - Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="about section " id="about">
+    <h2 class="section-title">About</h2>
+
+    <div class="about__container bd-grid">
+        <div class="about__img">
+            <img src="{% static 'portfolio/assets/img/about.jpg' %}" alt="About Me">
+        </div>
+
+        <div>
+            <h2 class="about__subtitle">I'am Claudio</h2>
+            <p class="about__text">Backend Developer focused on Python and Data Engineering. I build REST APIs and data-driven applications,
+                working with SQL for queries and relational data modeling. I enjoy turning ideas into clean, maintainable
+                solutions and continuously improving my skills through projects and training.</p>
+        </div>
+    </div>
+</section>
+
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills__container bd-grid">
+        <div>
+            <h2 class="skills__subtitle">Technical Skills</h2>
+            <p class="skills__text">Tools and technologies I use to build backend systems and work with data.</p>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bxl-python skills__icon'></i>
+                    <span class="skills__name">Python</span>
+                </div>
+                <div class="skills__bar skills__python">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">80%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bx-server skills__icon'></i>
+                    <span class="skills__name">Django / FastApi</span>
+                </div>
+                <div class="skills__bar skills__backend">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">75%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bx-data skills__icon'></i>
+                    <span class="skills__name">SQL</span>
+                </div>
+                <div class="skills__bar skills__sql">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">70%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bx-line-chart skills__icon'></i>
+                    <span class="skills__name">Pandas</span>
+                </div>
+                <div class="skills__bar skills__pandas">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">70%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bxl-github skills__icon'></i>
+                    <span class="skills__name">Git & GitHub</span>
+                </div>
+                <div class="skills__bar skills__git">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">70%</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img src="{% static 'portfolio/assets/img/work5.jpg' %}" alt="" class="skills__img">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

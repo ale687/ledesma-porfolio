@@ -3,14 +3,15 @@ from .models import Project
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'portfolio/home.html')
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'portfolio/about.html')
 
 def projects(request):
     projects = Project.objects.all()
-    return render(request, 'projects.html', {'projects': projects})
+    return render(request, 'portfolio/projects.html', {'projects': projects})
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'portfolio/contact.html')
+
