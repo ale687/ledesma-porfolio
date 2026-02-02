@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Project
 from django.core.mail import send_mail
 from django.conf import settings
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 
@@ -52,15 +53,21 @@ def contact(request):
         Message:
         {message}
         """
-
-        send_mail(
-            subject="New Portfolio Contact Message",
-            message=full_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.EMAIL_HOST_USER],
-            fail_silently=False
-        )
+        try:
+            send_mail(
+                subject="New Portfolio Contact Message",
+                message=full_message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.EMAIL_HOST_USER],
+                fail_silently=False
+            )
+            
+            messages.success(request, 'Message Sent Successfully!')
+            
+        except Exception:            
+            messages.error(request, 'Could not send email right now. Please try again later.')
         
-        succes = True
-    
-    return render(request, 'portfolio/contact.html', {'success': succes})
+        return redirect('contact')
+        
+            
+    return render(request, 'portfolio/contact.html')
