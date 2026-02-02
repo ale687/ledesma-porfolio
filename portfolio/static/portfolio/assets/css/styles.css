@@ -291,10 +291,10 @@ img {
   z-index: var(--z-back);
 }
 .skills__python {
-  width: 95%;
+  width: 85%;
 }
 .skills__backend {
-  width: 85%;
+  width: 75%;
 }
 .skills__sql {
   width: 70%;
@@ -303,7 +303,7 @@ img {
   width: 70%;
 }
 .skills__git {
-  width: 85%;
+  width: 80%;
 }
 .skills__img {
   border-radius: 0.5rem;

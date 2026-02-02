@@ -10,11 +10,22 @@
     <h2 class="section-title">Contact</h2>
 
     <div class="contact__container bd-grid">
-        <form action="" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input">
-            <input type="email" placeholder="Email" class="contact__input">
-            <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-            <input type="button" value="Enviar" class="contact__button button">
+
+        {% if success %}
+        <p style="color:green"; font-weight: 600; text-align: center;>
+            Message sent successfully! 
+        </p>        
+        {% endif %}
+
+        <form method="post" class="contact__form">
+            {% csrf_token %}
+
+            <input type="text" name="name" placeholder="Name" class="contact__input" required>
+            <input type="email" name="email" placeholder="Email" class="contact__input" required>
+
+            <textarea name="message" placeholder="Message" rows="10" class="contact__input" required></textarea>
+
+            <button type="submit" class="contact__button button">Send</button>
         </form>
     </div>
 </section>
